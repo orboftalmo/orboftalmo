@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
   <defs>
     <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#070f2e"/>
-      <stop offset="1" stop-color="#0c1c4a"/>
+      <stop offset="0" stop-color="#091732"/>
+      <stop offset="1" stop-color="#0d2350"/>
     </linearGradient>
   </defs>
   <rect width="800" height="600" fill="url(#g)"/>
-  <g stroke="#e2f4fc" stroke-width="3" fill="none" opacity="0.9">
+  <g stroke="#e0f5fc" stroke-width="3" fill="none" opacity="0.9">
     
 <circle cx="400" cy="260" r="120" stroke-dasharray="2 8" opacity="0.5"/>
 <circle cx="400" cy="260" r="60"/>
@@ -14,5 +14,5 @@
 <path d="M400 140 v-30 M400 380 v30 M280 260 h-30 M520 260 h30"/>
 
   </g>
-  <text x="400" y="560" font-family="Arial, sans-serif" font-size="18" fill="#e2f4fc" text-anchor="middle" opacity="0.75">ORB · APRAMED — Diagnóstico</text>
+  <text x="400" y="560" font-family="Arial, sans-serif" font-size="18" fill="#e0f5fc" text-anchor="middle" opacity="0.75">ORB · APRAMED — Diagnóstico</text>
 </svg>

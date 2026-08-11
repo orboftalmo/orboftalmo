@@ -36,6 +36,16 @@ Imagens de produtos, notícias, eventos e do hero estão em
 substituídas por fotografias reais dos equipamentos e da empresa assim que
 estiverem disponíveis.
 
+## Marca
+
+O mark ORB (`src/components/layout/OrbMark.tsx`, favicon em `src/app/icon.svg`
+e `src/app/favicon.ico`) e a paleta de cores em `src/app/globals.css`
+(`--color-navy: #091732`, `--color-accent: #00adef`) foram extraídos com
+fidelidade vetorial do arquivo oficial fornecido pelo cliente
+(`Marca_Pos_Cor.eps`) via Ghostscript + pdftocairo — não são uma recriação
+aproximada. Os arquivos de origem (mark isolado e lockup completo com o nome
+por extenso) ficam em `public/brand/` para reuso futuro.
+
 ## Formulários
 
 Os formulários de **Orçamento** (`/orcamento`) e **Trabalhe Conosco**
