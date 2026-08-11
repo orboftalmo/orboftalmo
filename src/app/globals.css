@@ -7,11 +7,11 @@
   --color-line: #e2e6ea;
   --color-ink: #10161f;
   --color-ink-soft: #4a5568;
-  --color-navy: #0a2a4a;
-  --color-navy-deep: #071b33;
-  --color-navy-soft: #dce6ef;
-  --color-accent: #0f9e94;
-  --color-accent-soft: #e3f4f2;
+  --color-navy: #0c1c4a;
+  --color-navy-deep: #070f2e;
+  --color-navy-soft: #dde5f7;
+  --color-accent: #1ea7e0;
+  --color-accent-soft: #e2f4fc;
 }
 
 @theme inline {

@@ -1,5 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <circle cx="32" cy="32" r="30" fill="#0a2a4a"/>
-  <circle cx="32" cy="32" r="13" fill="#0f9e94"/>
-  <circle cx="32" cy="32" r="4.5" fill="#fbfbfa"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="64" height="64">
+  <circle cx="100" cy="100" r="100" fill="#070f2e"/>
+  <g stroke="#1ea7e0" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <circle cx="61" cy="100" r="27"/>
+    <path d="M99 70 V130"/>
+    <path d="M99 70 H119 A18 18 0 0 1 119 106 H99"/>
+    <path d="M108 104 L129 130"/>
+    <path d="M145 70 V130"/>
+    <path d="M145 70 H163 A15 15 0 0 1 163 100 H145"/>
+    <path d="M145 100 H165 A15 15 0 0 1 165 130 H145"/>
+  </g>
 </svg>
