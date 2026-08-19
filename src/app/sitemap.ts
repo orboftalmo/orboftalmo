@@ -11,7 +11,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/assistencia",
     "/noticias",
     "/eventos",
-    "/trabalhe-conosco",
     "/contato",
     "/orcamento",
     "/politica-de-privacidade",

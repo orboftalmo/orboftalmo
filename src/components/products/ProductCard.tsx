@@ -15,6 +15,9 @@ export function ProductCard({ product }: { product: Product }) {
           sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
           className="object-cover transition-transform duration-300 group-hover:scale-105"
         />
+        <span className="absolute bottom-2 right-2 rounded-full bg-navy-deep/70 px-2.5 py-1 text-[10px] font-medium text-white/80 backdrop-blur-sm">
+          Imagem ilustrativa
+        </span>
       </div>
       <div className="flex flex-1 flex-col gap-3 p-6">
         {category && (
@@ -23,6 +26,11 @@ export function ProductCard({ product }: { product: Product }) {
           </span>
         )}
         <h3 className="text-lg font-semibold text-navy">{product.name}</h3>
+        {product.applications[0] && (
+          <p className="text-xs font-medium text-ink-soft">
+            Aplicação principal: <span className="text-ink">{product.applications[0]}</span>
+          </p>
+        )}
         <p className="flex-1 text-sm leading-relaxed text-ink-soft">
           {product.shortDescription}
         </p>

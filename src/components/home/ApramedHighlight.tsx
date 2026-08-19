@@ -1,12 +1,12 @@
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { siteConfig } from "@/content/site-config";
+import { buildWhatsAppUrl, siteConfig } from "@/content/site-config";
 
 export function ApramedHighlight() {
   return (
     <section className="border-y border-line bg-navy py-20 text-white sm:py-24">
-      <Container className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-center">
-        <div>
+      <Container>
+        <div className="max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/60">
             Parceria
           </p>
@@ -15,25 +15,46 @@ export function ApramedHighlight() {
             <br />
             <span className="text-accent">Tecnologia reconhecida. Atendimento próximo.</span>
           </h2>
-        </div>
-        <div>
-          <p className="text-base leading-relaxed text-white/75">
-            {siteConfig.apramed.description} Em Minas Gerais, a ORB é quem leva essa tecnologia até
-            o médico: apresentando os equipamentos, orientando a escolha ideal para cada consultório
-            ou clínica e acompanhando de perto todo o processo — da demonstração à aquisição.
+          <p className="mt-5 text-base leading-relaxed text-white/75">
+            Duas frentes que se complementam: a tecnologia da APRAMED e o atendimento local da
+            ORB. É essa combinação que leva a solução certa até o seu consultório em Minas Gerais.
           </p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <Button href="/produtos" variant="accent">
-              Ver produtos APRAMED
-            </Button>
-            <Button
-              href="/institucional"
-              variant="secondary"
-              className="border-white/30 text-white hover:border-white/60 hover:bg-white/10"
-            >
-              Nossa parceria
-            </Button>
+        </div>
+
+        <div className="mt-12 grid gap-6 lg:grid-cols-2">
+          <div className="rounded-2xl border border-white/15 bg-white/5 p-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/50">
+              APRAMED
+            </p>
+            <h3 className="mt-2 font-display text-xl font-semibold">Tecnologia e portfólio</h3>
+            <p className="mt-3 text-sm leading-relaxed text-white/70">{siteConfig.apramed.description}</p>
           </div>
+          <div className="rounded-2xl border border-accent/40 bg-white/5 p-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-accent">ORB</p>
+            <h3 className="mt-2 font-display text-xl font-semibold">
+              Atendimento, consultoria e suporte local
+            </h3>
+            <p className="mt-3 text-sm leading-relaxed text-white/70">
+              Em Minas Gerais, a ORB apresenta o portfólio, orienta a escolha do equipamento
+              adequado, viabiliza demonstrações e acompanha de perto o relacionamento — da
+              decisão de compra ao suporte contínuo.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-10 flex flex-wrap gap-4">
+          <Button href="/produtos" variant="accent">
+            Ver produtos APRAMED
+          </Button>
+          <Button
+            href={buildWhatsAppUrl(siteConfig.contact.whatsappSpecialistMessage)}
+            variant="secondary"
+            className="border-white/30 text-white hover:border-white/60 hover:bg-white/10"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Falar com um especialista
+          </Button>
         </div>
       </Container>
     </section>

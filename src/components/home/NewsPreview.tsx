@@ -6,6 +6,7 @@ import { getLatestNews } from "@/content/news";
 
 export function NewsPreview() {
   const posts = getLatestNews(3);
+  if (posts.length === 0) return null;
 
   return (
     <section className="py-20 sm:py-24">

@@ -46,15 +46,18 @@ export default function ContatoPage() {
                 <br />
                 {contact.address.line2}
                 <br />
-                {contact.address.city}/{contact.address.state} — {contact.address.zip}
+                {contact.address.city}/{contact.address.state}
+                {contact.address.zip ? ` — ${contact.address.zip}` : ""}
               </p>
             </div>
-            <div>
-              <h2 className="text-sm font-semibold uppercase tracking-[0.14em] text-navy">
-                Horário de atendimento
-              </h2>
-              <p className="mt-2 text-lg text-ink">{contact.hours}</p>
-            </div>
+            {contact.hours && (
+              <div>
+                <h2 className="text-sm font-semibold uppercase tracking-[0.14em] text-navy">
+                  Horário de atendimento
+                </h2>
+                <p className="mt-2 text-lg text-ink">{contact.hours}</p>
+              </div>
+            )}
             <div>
               <h2 className="text-sm font-semibold uppercase tracking-[0.14em] text-navy">
                 Redes sociais

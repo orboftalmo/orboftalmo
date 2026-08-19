@@ -6,6 +6,7 @@ import { getUpcomingEvents } from "@/content/events";
 
 export function EventsPreview() {
   const upcoming = getUpcomingEvents(2);
+  if (upcoming.length === 0) return null;
 
   return (
     <section className="bg-paper-alt py-20 sm:py-24">

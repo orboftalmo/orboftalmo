@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { PageHero } from "@/components/ui/PageHero";
 import { EventCard } from "@/components/events/EventCard";
+import { EmptyState } from "@/components/ui/EmptyState";
 import { events } from "@/content/events";
 
 export const metadata: Metadata = {
@@ -22,11 +23,18 @@ export default function EventosPage() {
       />
       <section className="py-16 sm:py-20">
         <Container>
-          <div className="grid gap-6">
-            {events.map((event) => (
-              <EventCard key={event.slug} event={event} />
-            ))}
-          </div>
+          {events.length > 0 ? (
+            <div className="grid gap-6">
+              {events.map((event) => (
+                <EventCard key={event.slug} event={event} />
+              ))}
+            </div>
+          ) : (
+            <EmptyState
+              title="Nenhum evento confirmado no momento"
+              description="Assim que houver participação da ORB e da APRAMED em congressos, simpósios ou feiras, os detalhes aparecerão aqui. Fale com a nossa equipe para saber mais."
+            />
+          )}
         </Container>
       </section>
     </>

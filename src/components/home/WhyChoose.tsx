@@ -3,29 +3,20 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const reasons = [
   {
-    title: "Representação APRAMED em Minas Gerais",
-    description:
-      "Acesso direto ao portfólio de equipamentos APRAMED, com o suporte de quem conhece o mercado mineiro.",
+    title: "Tecnologia",
+    description: "Portfólio APRAMED: equipamentos oftalmológicos reconhecidos no setor.",
   },
   {
-    title: "Atendimento especializado",
-    description:
-      "Equipe próxima do médico, pronta para entender a rotina da clínica e indicar o caminho mais adequado.",
+    title: "Especialização",
+    description: "Conhecimento do mercado oftalmológico mineiro e da rotina de quem atende pacientes.",
   },
   {
-    title: "Consultoria na escolha do equipamento",
-    description:
-      "Orientação técnica para comparar opções e decidir com segurança o investimento certo para o seu consultório.",
+    title: "Consultoria",
+    description: "Orientação para a escolha da solução mais adequada ao seu consultório ou clínica.",
   },
   {
-    title: "Demonstração de produtos",
-    description:
-      "Possibilidade de conhecer os equipamentos de perto antes de decidir, com atendimento consultivo em cada etapa.",
-  },
-  {
-    title: "Relacionamento próximo",
-    description:
-      "Uma relação de confiança que continua depois da venda, com a ORB como referência local para novas necessidades.",
+    title: "Proximidade",
+    description: "Atendimento especializado, próximo e contínuo em Minas Gerais.",
   },
 ];
 
@@ -39,7 +30,7 @@ export function WhyChoose() {
           align="center"
           className="mx-auto"
         />
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {reasons.map((reason, index) => (
             <div key={reason.title} className="rounded-2xl border border-line bg-white p-6">
               <span className="font-display text-2xl font-semibold text-accent">
