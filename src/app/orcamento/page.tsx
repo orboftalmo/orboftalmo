@@ -16,8 +16,8 @@ export default function OrcamentoPage() {
     <>
       <PageHero
         eyebrow="Orçamento"
-        title="Solicitar orçamento"
-        description="Preencha o formulário abaixo e nossa equipe entrará em contato para apresentar a melhor solução para sua clínica ou hospital."
+        title="Encontre a solução ideal para sua clínica"
+        description="Conte-nos o que você procura e nossa equipe entrará em contato para entender sua necessidade."
         breadcrumb={[{ label: "Início", href: "/" }, { label: "Solicitar Orçamento" }]}
       />
       <section className="py-16 sm:py-20">

@@ -14,22 +14,20 @@ export function About() {
         />
         <div className="grid grid-cols-2 gap-6 rounded-3xl border border-line bg-paper-alt p-8">
           <div>
-            <p className="font-display text-3xl font-semibold text-navy">
-              {siteConfig.foundedYear}
-            </p>
-            <p className="mt-1 text-sm text-ink-soft">Ano de fundação da ORB</p>
+            <p className="font-display text-3xl font-semibold text-navy">+40 anos</p>
+            <p className="mt-1 text-sm text-ink-soft">De experiência, desde {siteConfig.foundedYear}</p>
           </div>
           <div>
-            <p className="font-display text-3xl font-semibold text-navy">MG</p>
-            <p className="mt-1 text-sm text-ink-soft">Atuação em Minas Gerais</p>
+            <p className="font-display text-3xl font-semibold text-navy">Minas Gerais</p>
+            <p className="mt-1 text-sm text-ink-soft">Área de atuação</p>
           </div>
           <div>
-            <p className="font-display text-3xl font-semibold text-navy">1</p>
-            <p className="mt-1 text-sm text-ink-soft">Representação oficial APRAMED</p>
+            <p className="font-display text-3xl font-semibold text-navy">Oftalmologia</p>
+            <p className="mt-1 text-sm text-ink-soft">Especialização exclusiva</p>
           </div>
           <div>
-            <p className="font-display text-3xl font-semibold text-navy">B2B</p>
-            <p className="mt-1 text-sm text-ink-soft">Atendimento consultivo especializado</p>
+            <p className="font-display text-3xl font-semibold text-navy">APRAMED</p>
+            <p className="mt-1 text-sm text-ink-soft">Representação oficial</p>
           </div>
         </div>
       </Container>

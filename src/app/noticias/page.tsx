@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { PageHero } from "@/components/ui/PageHero";
 import { NewsCard } from "@/components/news/NewsCard";
+import { EmptyState } from "@/components/ui/EmptyState";
 import { newsPosts } from "@/content/news";
 
 export const metadata: Metadata = {
@@ -21,11 +22,18 @@ export default function NoticiasPage() {
       />
       <section className="py-16 sm:py-20">
         <Container>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {newsPosts.map((post) => (
-              <NewsCard key={post.slug} post={post} />
-            ))}
-          </div>
+          {newsPosts.length > 0 ? (
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {newsPosts.map((post) => (
+                <NewsCard key={post.slug} post={post} />
+              ))}
+            </div>
+          ) : (
+            <EmptyState
+              title="Nenhuma notícia publicada no momento"
+              description="Estamos preparando conteúdos sobre oftalmologia, tecnologia e o mercado. Volte em breve ou fale com a nossa equipe."
+            />
+          )}
         </Container>
       </section>
     </>

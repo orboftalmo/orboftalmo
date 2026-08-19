@@ -22,19 +22,24 @@ export const siteConfig = {
     phoneDisplay: "(31) 99791-4696",
     // Formato E.164 sem símbolos, usado para o link do WhatsApp (wa.me).
     whatsappNumber: "5531997914696",
-    whatsappDefaultMessage:
-      "Olá! Gostaria de conhecer os equipamentos APRAMED disponíveis através da ORB em Minas Gerais.",
+    whatsappDefaultMessage: "Olá, gostaria de conhecer as soluções APRAMED disponíveis através da ORB.",
+    whatsappSpecialistMessage:
+      "Olá! Gostaria de falar com um especialista da ORB sobre as soluções APRAMED disponíveis em Minas Gerais.",
     email: "contato@orboftalmo.com.br",
     address: {
       line1: "Av. do Contorno, 3979 — salas 1004/1005",
       line2: "Bairro São Lucas",
       city: "Belo Horizonte",
       state: "MG",
-      // CEP não confirmado nas fontes pesquisadas.
-      zip: "[CEP a confirmar]",
+      // CEP não confirmado nas fontes pesquisadas — propositalmente omitido da UI
+      // pública (ver página de Contato) até que a ORB confirme o dado.
+      zip: undefined as string | undefined,
       country: "Brasil",
     },
-    hours: "[Horário de atendimento a confirmar — sugestão: Segunda a sexta, 8h às 18h]",
+    // Horário de atendimento não confirmado nas fontes pesquisadas — propositalmente
+    // omitido da UI pública até que a ORB confirme o dado. Preencha para exibir na
+    // página de Contato.
+    hours: undefined as string | undefined,
     mapEmbedUrl:
       "https://www.google.com/maps?q=Av.+do+Contorno,+3979,+Belo+Horizonte,+MG&output=embed",
   },
@@ -60,7 +65,6 @@ export const navLinks = [
   { label: "Assistência", href: "/assistencia" },
   { label: "Notícias", href: "/noticias" },
   { label: "Eventos", href: "/eventos" },
-  { label: "Trabalhe Conosco", href: "/trabalhe-conosco" },
   { label: "Contato", href: "/contato" },
 ] as const;
 
@@ -76,7 +80,6 @@ export const footerInstitutionalLinks = [
   { label: "Assistência", href: "/assistencia" },
   { label: "Notícias", href: "/noticias" },
   { label: "Eventos", href: "/eventos" },
-  { label: "Trabalhe Conosco", href: "/trabalhe-conosco" },
 ] as const;
 
 export function buildWhatsAppUrl(message?: string) {

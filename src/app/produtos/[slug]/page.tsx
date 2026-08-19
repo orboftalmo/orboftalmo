@@ -5,11 +5,13 @@ import { Container } from "@/components/ui/Container";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { Button } from "@/components/ui/Button";
 import { ProductCard } from "@/components/products/ProductCard";
+import { buildWhatsAppUrl } from "@/content/site-config";
 import {
   products,
   getProductBySlug,
   getCategoryBySlug,
   getRelatedProducts,
+  getProductAudience,
 } from "@/content/products";
 
 export function generateStaticParams() {
@@ -48,6 +50,7 @@ export default async function ProductDetailPage({
 
   const category = getCategoryBySlug(product.category);
   const related = getRelatedProducts(product);
+  const audience = getProductAudience(product);
 
   return (
     <>
@@ -76,6 +79,9 @@ export default async function ProductDetailPage({
                 sizes="(min-width: 1024px) 45vw, 90vw"
                 className="object-cover"
               />
+              <span className="absolute bottom-3 right-3 rounded-full bg-navy-deep/70 px-3 py-1 text-xs font-medium text-white/80 backdrop-blur-sm">
+                Imagem ilustrativa
+              </span>
             </div>
             {product.gallery.length > 1 && (
               <div className="mt-4 grid grid-cols-4 gap-4">
@@ -100,14 +106,51 @@ export default async function ProductDetailPage({
             <h1 className="font-display mt-3 text-3xl font-semibold text-navy sm:text-4xl">
               {product.name}
             </h1>
-            <p className="mt-5 text-base leading-relaxed text-ink-soft">{product.description}</p>
 
-            <div className="mt-8 flex flex-wrap gap-4">
+            <h2 className="mt-6 text-xs font-semibold uppercase tracking-[0.14em] text-ink-soft">
+              O que é
+            </h2>
+            <p className="mt-2 text-base leading-relaxed text-ink-soft">{product.description}</p>
+
+            {audience.length > 0 && (
+              <>
+                <h2 className="mt-6 text-xs font-semibold uppercase tracking-[0.14em] text-ink-soft">
+                  Para quem é
+                </h2>
+                <ul className="mt-2 space-y-1.5 text-base leading-relaxed text-ink-soft">
+                  {audience.map((item) => (
+                    <li key={item} className="flex gap-2">
+                      <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
+
+            <div className="mt-8 flex flex-wrap gap-3">
               <Button href={`/orcamento?produto=${encodeURIComponent(product.name)}`} variant="accent">
                 Solicitar orçamento
               </Button>
-              <Button href="/produtos" variant="secondary">
-                Voltar ao catálogo
+              <Button
+                href={buildWhatsAppUrl(
+                  `Olá! Gostaria de falar com um especialista da ORB sobre o ${product.name}.`
+                )}
+                variant="secondary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Falar com especialista
+              </Button>
+              <Button
+                href={buildWhatsAppUrl(
+                  `Olá! Gostaria de agendar uma demonstração do ${product.name} com a ORB.`
+                )}
+                variant="ghost"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Agendar demonstração
               </Button>
             </div>
 

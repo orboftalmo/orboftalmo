@@ -334,6 +334,32 @@ export const products: Product[] = [
   },
 ];
 
+/**
+ * "Para quem é" por categoria — perfil de clínica/profissional a que a linha de produto
+ * se destina. Definido por categoria (não por produto individual) para evitar repetição;
+ * descreve o perfil de forma geral e segura, sem inventar dados específicos de clientes.
+ */
+const audienceByCategory: Record<ProductCategorySlug, string[]> = {
+  consultorios: [
+    "Consultórios oftalmológicos em fase de montagem ou expansão",
+    "Clínicas que buscam padronizar o atendimento em múltiplas salas",
+  ],
+  refracao: [
+    "Consultórios que realizam exame de refração como parte da rotina de consulta",
+  ],
+  diagnostico: [
+    "Clínicas e centros oftalmológicos com rotina de exames diagnósticos",
+  ],
+  cirurgia: [
+    "Centros cirúrgicos oftalmológicos e clínicas com estrutura para procedimentos",
+  ],
+  outros: ["Clínicas e hospitais com necessidades específicas de equipamento oftalmológico"],
+};
+
+export function getProductAudience(product: Product) {
+  return audienceByCategory[product.category];
+}
+
 export function getProductBySlug(slug: string) {
   return products.find((product) => product.slug === slug);
 }

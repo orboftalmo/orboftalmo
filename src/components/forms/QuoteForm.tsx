@@ -95,6 +95,24 @@ export function QuoteForm() {
         <TextInput id="email" name="email" type="email" required autoComplete="email" />
       </Field>
 
+      <fieldset className="flex flex-col gap-2 sm:col-span-2">
+        <legend className="text-sm font-medium text-ink">Você já sabe qual equipamento procura?</legend>
+        <div className="flex flex-wrap gap-4">
+          {["Sim", "Não", "Quero orientação"].map((option) => (
+            <label key={option} className="flex items-center gap-2 text-sm text-ink">
+              <input
+                type="radio"
+                name="conhece_equipamento"
+                value={option}
+                defaultChecked={option === "Quero orientação"}
+                className="h-4 w-4 border-line text-navy focus-visible:outline-2 focus-visible:outline-accent"
+              />
+              {option}
+            </label>
+          ))}
+        </div>
+      </fieldset>
+
       <Field label="Produto de interesse" htmlFor="produto">
         <TextInput
           id="produto"
